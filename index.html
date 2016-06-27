@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="bootstrap@3.1.1" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script data-require="angular.js@1.2.13" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script data-require="angular.js@1.2.13" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular-animate.js"></script>
+  <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="jumbotron">school data using IndexedDB</h3>
+        <div ng-init="vm.questionData" data-ng-app="indexDBSample" data-ng-controller="SchoolController as vm">
+          <div class="form-group">
+           <label>{{vm.schoolQuestionData.Q01}}</label>
+           <input type="text" data-ng-model="vm.schoolname" name="school" placeholder="School Name" class="form-control" />
+         </div>
+         <div class="form-group">
+          <label>{{vm.schoolQuestionData.Q02}}</label>
+          <input type="text" data-ng-model="vm.location" name="school" placeholder="school location" class="form-control" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-lg" data-ng-click="vm.addSchool()">Add</button>
+          <button class="btn btn-secondary btn-lg" data-ng-click="vm.refreshList()">Refresh</button>
+        </div>
+        <table class="table table-striped">
+          <tr data-ng-repeat="school in vm.school">
+            <td>{{school.schoolname}}</td>
+            <td>{{school.location}}</td>
+            <td><a href="#" data-ng-click="vm.deleteSchool(school.id)"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+          </tr>
+        </table>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

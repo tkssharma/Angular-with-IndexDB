@@ -1,0 +1,14 @@
+/* Styles go here */
+body {
+    margin: 10px;
+    padding: 10px;
+    font-family:'Palatino';
+    font-size: 16px;
+}
+
+.footer {
+    position:absolute;
+    bottom:-20px;
+    right:20px;
+    font-size:12px;
+}
